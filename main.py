@@ -13,30 +13,39 @@ def home():
     <html>
         <head>
             <title>LEGO Exchange</title>
+            <!-- Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <!-- CSS propi -->
             <link rel="stylesheet" type="text/css" href="/static/style.css">
         </head>
-        <body>
-            <h1>LEGO Exchange</h1>
-            <div class="container">
-                <div class="box"><a href="/add-family">Afegir família</a></div>
-                <div class="box"><a href="/configure-family">Configurar família</a></div>
-                <div class="box"><a href="/request-swap">Demanar intercanvi</a></div>
+        <body class="bg-light text-center">
+            <div class="container py-5">
+                <h1 class="mb-5 display-4">LEGO Exchange</h1>
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-3">
+                        <div class="card lego-card">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <a href="/add-family" class="stretched-link">Afegir família</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card lego-card">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <a href="/configure-family" class="stretched-link">Configurar família</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card lego-card">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <a href="/request-swap" class="stretched-link">Demanar intercanvi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </body>
     </html>
     """
     return html
-
-# ---------- Placeholder routes ----------
-
-@app.get("/add-family", response_class=HTMLResponse)
-def add_family():
-    return "<h2>Pàgina per afegir família (en construcció)</h2>"
-
-@app.get("/configure-family", response_class=HTMLResponse)
-def configure_family():
-    return "<h2>Pàgina per configurar família (en construcció)</h2>"
-
-@app.get("/request-swap", response_class=HTMLResponse)
-def request_swap():
-    return "<h2>Pàgina per demanar intercanvi (en construcció)</h2>"
